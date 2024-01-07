@@ -1,0 +1,74 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $primaryColor;
+  @include flex(column, center, center);
+}
+
+.card {
+  width: 400px;
+  height: 550px;
+  background-color: $White;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  border: 1px solid $Black;
+  box-shadow: 8px 8px 0px $Black;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .learning {
+    background-color: $primaryColor;
+    width: fit-content;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+
+    &:hover {
+      color: $primaryColor;
+      cursor: pointer;
+    }
+  }
+
+  p:nth-child(5) {
+    color: $Grey;
+    line-height: 1.5rem;
+  }
+
+  .avatar {
+    @include flex(row, center, start);
+    gap: 1rem;
+
+    img {
+      width: 32px;
+    }
+
+    p {
+      font-weight: 800;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .card {
+    transform: scale(0.8);
+  }
+}
